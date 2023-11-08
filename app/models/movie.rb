@@ -25,4 +25,8 @@ class Movie < ApplicationRecord
 
     return the_one
   end
+
+  belongs_to(:director)
+  has_many(:characters)
+  has_many(:actors, through: :characters, source: :actor)
 end
